@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Instagram Clone</string>
+    <string name="back4app_server_url">https://parseapi.back4app.com/</string>
+
+    <!-- Change the following strings as required -->
+    <string name="back4app_app_id">piWPWBhDFnOA5MvwpT4hUDrH57fSR7T3Js5tRt7K</string>
+    <string name="back4app_client_key">aBk9DFZeBt5oPKmBEgoD3wV5vvkhBsetwUSlryLQ</string>
+    <string name="editName">Enter Name of KickBoxer</string>
+    <string name="editPunchPower">Enter the PunchPower</string>
+    <string name="editPunchSpeed">Enter the PunchSpeed</string>
+    <string name="editKickPower">Enter the KickPower</string>
+    <string name="editKickSpeed">Enter the KickSpeed</string>
+    <string name="btnSubmit">Submit</string>
+    <string name="textGetData">Get Data From SERVER</string>
+    <string name="btnGetAllData">Get All KickBoxer\'s</string>
+
+</resources>
