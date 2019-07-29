@@ -46,7 +46,10 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
         });
 
         if (ParseUser.getCurrentUser() != null)
-        {ParseUser.getCurrentUser().logOut();}
+        {
+//            ParseUser.getCurrentUser().logOut();
+            transitionToSocialMediaActivity();
+        }
     }
 
     @Override
@@ -73,6 +76,7 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
                         public void done(ParseException e) {
                             if (e == null) {
                                 Toasty.success(SignUp.this, signUpUser.getUsername() + " is Signed Up ", Toasty.LENGTH_SHORT).show();
+                                transitionToSocialMediaActivity();
                             } else {
                                 Toasty.error(SignUp.this, e.getMessage(), Toasty.LENGTH_SHORT).show();
                             }
@@ -99,4 +103,10 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
         }
 
     }
+
+    private void transitionToSocialMediaActivity() {
+        Intent intent = new Intent(SignUp.this, SocialMediaActivity.class);
+        startActivity(intent);
+    }
+
 }

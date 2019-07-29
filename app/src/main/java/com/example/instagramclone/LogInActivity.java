@@ -44,7 +44,8 @@ public class LogInActivity extends AppCompatActivity implements View.OnClickList
             }
         });
 
-        if (ParseUser.getCurrentUser() != null) {
+        if (ParseUser.getCurrentUser() != null)
+        {
             ParseUser.getCurrentUser().logOut();
         }
     }
@@ -67,7 +68,8 @@ public class LogInActivity extends AppCompatActivity implements View.OnClickList
                         @Override
                         public void done(ParseUser user, ParseException e) {
                             if (user != null && e == null) {
-                                Toasty.success(LogInActivity.this, user.getUsername() + " is Logged in Successfully ", Toasty.LENGTH_SHORT).show();
+                                Toasty.success(LogInActivity.this, ParseUser.getCurrentUser().getUsername() + " is Logged in Successfully ", Toasty.LENGTH_SHORT).show();
+                                transitionToSocialMediaActivity();
                             } else {
                                 Toasty.error(LogInActivity.this, e.getMessage(), Toasty.LENGTH_SHORT).show();
                             }
@@ -93,6 +95,11 @@ public class LogInActivity extends AppCompatActivity implements View.OnClickList
             e.printStackTrace();
         }
 
+    }
+
+    private void transitionToSocialMediaActivity() {
+        Intent intent = new Intent(LogInActivity.this, SocialMediaActivity.class);
+        startActivity(intent);
     }
 
 }

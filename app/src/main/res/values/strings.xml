@@ -13,5 +13,8 @@
     <string name="textEmailLogin">Please Enter your LogIn Email</string>
     <string name="textPasswordLogin">Please Enter your Password</string>
 
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 
 </resources>
