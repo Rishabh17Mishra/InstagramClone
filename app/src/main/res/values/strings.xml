@@ -13,5 +13,6 @@
     <string name="btnSubmit">Submit</string>
     <string name="textGetData">Get Data From SERVER</string>
     <string name="btnGetAllData">Get All KickBoxer\'s</string>
+    <string name="btnSwitchActivity">Switch Activity</string>
 
 </resources>

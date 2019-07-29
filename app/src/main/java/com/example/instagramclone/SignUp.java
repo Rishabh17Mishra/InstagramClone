@@ -21,7 +21,7 @@ import es.dmoral.toasty.Toasty;
 
 public class SignUp extends AppCompatActivity implements View.OnClickListener{
 
-    private Button btnSubmit, btnGetAllData;
+    private Button btnSubmit, btnGetAllData, btnSwitchActivity;
     private EditText editName, editPunchPower, editPunchSpeed, editKickPower, editKickSpeed;
     private TextView textGetData;
     private String allKickBoxers;
@@ -39,6 +39,7 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener{
         editKickSpeed = findViewById(R.id.editKickSpeed);
         textGetData = findViewById(R.id.textGetData);
         btnGetAllData = findViewById(R.id.btnGetAllData);
+        btnSwitchActivity = findViewById(R.id.btnSwitchActivity);
 
         btnSubmit.setOnClickListener(SignUp.this);
         textGetData.setOnClickListener(new View.OnClickListener() {
@@ -62,6 +63,9 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener{
             public void onClick(View v) {
                 allKickBoxers = "" ;
                 ParseQuery<ParseObject> queryAll = ParseQuery.getQuery("KickBoxer");
+//                queryAll.whereGreaterThan("punch_power", 50);
+                queryAll.whereGreaterThanOrEqualTo("punch_power",50);
+                queryAll.setLimit(2);
                 queryAll.findInBackground(new FindCallback<ParseObject>() {
                     @Override
                     public void done(List<ParseObject> objects, ParseException e) {
@@ -77,6 +81,13 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener{
                         }
                     }
                 });
+            }
+        });
+
+        btnSwitchActivity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
             }
         });
 
