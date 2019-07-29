@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -35,6 +37,13 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
 
         btnSignUpUser.setOnClickListener(this);
         btnLogInUser.setOnClickListener(this);
+        textPassword.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View view, int keyCode, KeyEvent event) {
+                if (keyCode == KeyEvent.KEYCODE_ENTER && event.getAction() == KeyEvent.ACTION_DOWN) { onClick(btnSignUpUser); }
+                return false;
+            }
+        });
 
         if (ParseUser.getCurrentUser() != null)
         {ParseUser.getCurrentUser().logOut();}
@@ -46,26 +55,31 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
         switch (view.getId()) {
 
             case R.id.btnSignUpUser:
-                final ParseUser signUpUser = new ParseUser();
-                signUpUser.setEmail(textEmail.getText().toString());
-                signUpUser.setUsername(textUsername.getText().toString());
-                signUpUser.setPassword(textPassword.getText().toString());
+                if (textEmail.getText().toString().equals("") || textUsername.getText().toString().equals("") || textPassword.getText().toString().equals(""))
+                {
+                    Toasty.info(SignUp.this, "Email, Username, Password is required", Toasty.LENGTH_SHORT).show();
+                } else {
+                    final ParseUser signUpUser = new ParseUser();
+                    signUpUser.setEmail(textEmail.getText().toString());
+                    signUpUser.setUsername(textUsername.getText().toString());
+                    signUpUser.setPassword(textPassword.getText().toString());
 
-                final ProgressDialog progressDialog = new ProgressDialog(this);
-                progressDialog.setMessage(" Signing Up " + textUsername.getText().toString());
-                progressDialog.show();
+                    final ProgressDialog progressDialog = new ProgressDialog(this);
+                    progressDialog.setMessage(" Signing Up " + textUsername.getText().toString());
+                    progressDialog.show();
 
-                signUpUser.signUpInBackground(new SignUpCallback() {
-                    @Override
-                    public void done(ParseException e) {
-                        if (e == null) {
-                            Toasty.success(SignUp.this, signUpUser.getUsername() + " is Signed Up ", Toasty.LENGTH_SHORT).show();
-                        } else {
-                            Toasty.error(SignUp.this, e.getMessage(), Toasty.LENGTH_SHORT).show();
+                    signUpUser.signUpInBackground(new SignUpCallback() {
+                        @Override
+                        public void done(ParseException e) {
+                            if (e == null) {
+                                Toasty.success(SignUp.this, signUpUser.getUsername() + " is Signed Up ", Toasty.LENGTH_SHORT).show();
+                            } else {
+                                Toasty.error(SignUp.this, e.getMessage(), Toasty.LENGTH_SHORT).show();
+                            }
+                            progressDialog.dismiss();
                         }
-                        progressDialog.dismiss();
-                    }
-                });
+                    });
+                }
                 break;
 
             case R.id.btnLogInUser:
@@ -74,5 +88,15 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
                 break;
 
         }
+    }
+
+    public void rootLayoutTap(View view) {
+        try {
+            InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+            inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
 }

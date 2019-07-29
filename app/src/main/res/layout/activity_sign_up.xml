@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraineLayoutSignUp"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F44D27"
+    android:onClick="rootLayoutTap"
     tools:context=".SignUp">
 
     <ImageView
@@ -19,7 +20,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/instagram"
-        tools:ignore="ContentDescription"/>
+        tools:ignore="ContentDescription" />
 
     <EditText
         android:id="@+id/textEmail"
@@ -53,6 +54,7 @@
         android:background="#E75D8B"
         android:fontFamily="@font/amita"
         android:hint="@string/textUsername"
+        android:importantForAutofill="no"
         android:inputType="text"
         android:paddingHorizontal="16dp"
         android:paddingVertical="8dp"
@@ -61,8 +63,8 @@
         android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textEmail" tools:targetApi="o"
-        android:importantForAutofill="no" />
+        app:layout_constraintTop_toBottomOf="@+id/textEmail"
+        tools:targetApi="o" />
 
     <EditText
         android:id="@+id/textPassword"
@@ -74,6 +76,7 @@
         android:background="#E75D8B"
         android:fontFamily="@font/amita"
         android:hint="@string/textPassword"
+        android:importantForAutofill="no"
         android:inputType="textPassword"
         android:paddingHorizontal="16dp"
         android:paddingVertical="8dp"
@@ -82,18 +85,18 @@
         android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textUsername" tools:targetApi="o"
-        android:importantForAutofill="no" />
+        app:layout_constraintTop_toBottomOf="@+id/textUsername"
+        tools:targetApi="o" />
 
     <Button
         android:id="@+id/btnSignUpUser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:background="#365FF4"
         android:fontFamily="@font/amita"
         android:padding="10dp"
         android:text="@string/btnSignUpUser"
-        android:background="#365FF4"
         android:textColor="#130909"
         android:textSize="20sp"
         android:textStyle="bold|italic"
@@ -106,10 +109,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
+        android:background="#F0DB0B"
         android:fontFamily="@font/amita"
         android:padding="10dp"
         android:text="@string/btnLogInUser"
-        android:background="#F0DB0B"
         android:textColor="#110B0B"
         android:textSize="20sp"
         android:textStyle="bold|italic"
