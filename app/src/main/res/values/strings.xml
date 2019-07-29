@@ -5,22 +5,13 @@
     <!-- Change the following strings as required -->
     <string name="back4app_app_id">piWPWBhDFnOA5MvwpT4hUDrH57fSR7T3Js5tRt7K</string>
     <string name="back4app_client_key">aBk9DFZeBt5oPKmBEgoD3wV5vvkhBsetwUSlryLQ</string>
-    <string name="editName">Enter Name of KickBoxer</string>
-    <string name="editPunchPower">Enter the PunchPower</string>
-    <string name="editPunchSpeed">Enter the PunchSpeed</string>
-    <string name="editKickPower">Enter the KickPower</string>
-    <string name="editKickSpeed">Enter the KickSpeed</string>
-    <string name="btnSubmit">Submit</string>
-    <string name="textGetData">Get Data From SERVER</string>
-    <string name="btnGetAllData">Get All KickBoxer\'s</string>
-    <string name="btnSwitchActivity">Switch Activity</string>
-    <string name="editPassword">Enter your Password</string>
-    <string name="editUserName">Enter your Username</string>
-    <string name="btnSignUpUser">SignUp</string>
-    <string name="editUserNameLogin">Enter Username</string>
-    <string name="editPasswordLogin">Enter Password</string>
-    <string name="btnLoginUser">Log In</string>
-    <string name="textWelcome">Welcome To your LogIn Page</string>
-    <string name="btnLogOutUser">Log Out</string>
+    <string name="textEmail">Enter Your Email</string>
+    <string name="textUsername">Enter your Username</string>
+    <string name="textPassword">Enter your Pasword</string>
+    <string name="btnSignUpUser">Sign Up</string>
+    <string name="btnLogInUser">Log In</string>
+    <string name="textEmailLogin">Please Enter your LogIn Email</string>
+    <string name="textPasswordLogin">Please Enter your Password</string>
+
 
 </resources>
