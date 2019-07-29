@@ -47,7 +47,7 @@ public class LogInActivity extends AppCompatActivity implements View.OnClickList
             case R.id.btnLogInUserLogin:
 
                 final ProgressDialog progressDialog = new ProgressDialog(this);
-                progressDialog.setMessage(" Logging In " + textEmailLogin.getText().toString());
+                progressDialog.setMessage(textEmailLogin.getText().toString() + " Log In Complete");
                 progressDialog.show();
 
                 ParseUser.logInInBackground(textEmailLogin.getText().toString(), textPasswordLogin.getText().toString(), new LogInCallback() {
