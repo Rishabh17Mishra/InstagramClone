@@ -1,5 +1,6 @@
 package com.example.instagramclone;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -46,6 +47,10 @@ public class SignUpLoginActivity extends AppCompatActivity {
                     public void done(ParseException e) {
                         if (e == null) {
                             Toasty.success(SignUpLoginActivity.this, appUser.get("username") + " is Signed Up Successfully", Toast.LENGTH_SHORT).show();
+
+                            Intent intent = new Intent(SignUpLoginActivity.this, WelcomeActivity.class);
+                            startActivity(intent);
+
                         } else
                             Toasty.error(SignUpLoginActivity.this,e.getMessage(),Toast.LENGTH_SHORT).show();
                     }
@@ -62,6 +67,10 @@ public class SignUpLoginActivity extends AppCompatActivity {
                             public void done(ParseUser user, ParseException e) {
                                 if (user != null && e == null) {
                                     Toasty.success(SignUpLoginActivity.this, user.get("username") + " is Logged In Successfully", Toast.LENGTH_SHORT).show();
+
+                                    Intent intent = new Intent(SignUpLoginActivity.this, WelcomeActivity.class);
+                                    startActivity(intent);
+
                                 } else
                                     Toasty.error(SignUpLoginActivity.this,e.getMessage(),Toast.LENGTH_SHORT).show();
                             }

@@ -20,5 +20,7 @@
     <string name="editUserNameLogin">Enter Username</string>
     <string name="editPasswordLogin">Enter Password</string>
     <string name="btnLoginUser">Log In</string>
+    <string name="textWelcome">Welcome To your LogIn Page</string>
+    <string name="btnLogOutUser">Log Out</string>
 
 </resources>
