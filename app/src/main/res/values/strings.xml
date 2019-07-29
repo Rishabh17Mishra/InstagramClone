@@ -14,5 +14,11 @@
     <string name="textGetData">Get Data From SERVER</string>
     <string name="btnGetAllData">Get All KickBoxer\'s</string>
     <string name="btnSwitchActivity">Switch Activity</string>
+    <string name="editPassword">Enter your Password</string>
+    <string name="editUserName">Enter your Username</string>
+    <string name="btnSignUpUser">SignUp</string>
+    <string name="editUserNameLogin">Enter Username</string>
+    <string name="editPasswordLogin">Enter Password</string>
+    <string name="btnLoginUser">Log In</string>
 
 </resources>
