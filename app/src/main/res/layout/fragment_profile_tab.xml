@@ -1,14 +1,125 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#D790EB"
     tools:context=".ProfileTab">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <EditText
+        android:id="@+id/editProfileName"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+        android:background="#F44D27"
+        android:fontFamily="@font/amita"
+        android:paddingHorizontal="12dp"
+        android:paddingVertical="2dp"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        android:textStyle="italic"
+        android:hint="@string/editProfieName"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:importantForAutofill="no" tools:targetApi="o" />
 
-</FrameLayout>
+    <EditText
+        android:id="@+id/editProfileBio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="8dp"
+        android:background="#F44D27"
+        android:fontFamily="@font/amita"
+        android:paddingHorizontal="12dp"
+        android:paddingVertical="2dp"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        android:textStyle="italic"
+        android:hint="@string/editProfieBio"
+        android:inputType="text"
+        app:layout_constraintTop_toBottomOf="@+id/editProfileName"
+        android:importantForAutofill="no" tools:targetApi="o"/>
+
+    <EditText
+        android:id="@+id/editProfileProfession"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="8dp"
+        android:background="#F44D27"
+        android:fontFamily="@font/amita"
+        android:paddingHorizontal="12dp"
+        android:paddingVertical="2dp"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        android:textStyle="italic"
+        android:hint="@string/editProfieProfession"
+        android:inputType="text"
+        app:layout_constraintTop_toBottomOf="@+id/editProfileBio"
+        android:importantForAutofill="no" tools:targetApi="o"/>
+
+    <EditText
+        android:id="@+id/editProfileHobbies"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="8dp"
+        android:background="#F44D27"
+        android:fontFamily="@font/amita"
+        android:paddingHorizontal="12dp"
+        android:paddingVertical="2dp"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        android:textStyle="italic"
+        android:hint="@string/editProfieHobbies"
+        android:inputType="text"
+        app:layout_constraintTop_toBottomOf="@+id/editProfileProfession"
+        android:importantForAutofill="no" tools:targetApi="o"/>
+
+    <EditText
+        android:id="@+id/editProfileSport"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="8dp"
+        android:background="#F44D27"
+        android:fontFamily="@font/amita"
+        android:paddingHorizontal="12dp"
+        android:paddingVertical="2dp"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        android:textStyle="italic"
+        android:hint="@string/editProfieSport"
+        android:inputType="text"
+        app:layout_constraintTop_toBottomOf="@+id/editProfileHobbies"
+        android:importantForAutofill="no" tools:targetApi="o"/>
+
+    <Button
+        android:id="@+id/btnUpdateInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/btnUpdateInfo"
+        android:fontFamily="@font/amita"
+        android:padding="8dp"
+        android:background="#2E49F5"
+        android:textColor="#0E0505"
+        android:textSize="16sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editProfileSport" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
